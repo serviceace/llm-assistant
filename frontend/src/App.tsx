@@ -1,9 +1,15 @@
+import { useAtom } from 'jotai'
+import { assistantsAtom } from './store/assistantStore'
+
 function App() {
-    return (
-        <div>
-            <h1>LLM Assistant</h1>
-        </div>
-    )
-};
+  const [assistants] = useAtom(assistantsAtom)
+
+  return (
+    <div>
+      <h1>LLM Assistant</h1>
+      <p>Asistentes creados: {assistants.length}</p>
+    </div>
+  )
+}
 
 export default App
