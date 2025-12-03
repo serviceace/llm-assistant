@@ -5,11 +5,19 @@ function App() {
   const [assistants] = useAtom(assistantsAtom)
 
   return (
-    <div>
+    <div style={{ padding: '2rem' }}>
       <h1>LLM Assistant</h1>
-      <p>Asistentes creados: {assistants.length}</p>
+
+      <ul>
+        {assistants.map((assistant) => (
+          <li key={assistant.id}>
+            {assistant.name} — {assistant.model}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
 
 export default App
+
